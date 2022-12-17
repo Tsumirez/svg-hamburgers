@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#hamburger-icons {
+  padding:5%;
+}
+
+button {
+    background: transparent;
+    border:10px solid var(--icon-color, #000);
+    border-radius: 1rem;
+}
+
+.button-one {
+    --icon-color: darkgreen;
+}
+
+.button-one .line {
+    
+}
