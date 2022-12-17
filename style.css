@@ -23,13 +23,14 @@ button {
     --icon-color: darkgreen;
 }
 
-.button-one:hover .line {
-    transition: y 300ms ease-in, rotate .3s ease-in .3s, opacity 0ms .3s;
-}
-
 .button-one .line {
     transform-origin: center;
     transition: y .3s ease-out .3s, opacity 0ms .3ms, rotate .3s ease-out;
+}
+
+
+.button-one:hover .line {
+    transition: y 300ms ease-in, rotate .3s ease-in .3s, opacity 0ms .3s;
 }
 
 .button-one:hover .top {
@@ -44,10 +45,6 @@ button {
 .button-one:hover .bot {
     rotate: -45deg;
     y: 45;
-}
-
-.button-one:hover .top {
-
 }
 
 .button-one[aria-expanded="true"] .top {
