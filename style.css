@@ -75,3 +75,10 @@ button {
 
 
 /*  ---------------------- FIRST ICON END ------------------------------- */
+
+
+/* ------ STYLING AND ANIMATIONS FOR SECOND ICON  ------------- */
+
+.button-two {
+    --icon-color: maroon;
+}
