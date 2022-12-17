@@ -82,3 +82,12 @@ button {
 .button-two {
     --icon-color: maroon;
 }
+
+.button-two .line {
+    transition: stroke-dashoffset 1s;
+
+}
+
+.button-two:hover .line {
+    stroke-dashoffset: 69.9;
+}
