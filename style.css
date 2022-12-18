@@ -137,4 +137,24 @@ button {
 
 .button-three {
     --icon-color: indigo;
+    --ruler-color: red;
+    overflow: hidden;
 }
+
+.button-three .line {
+    stroke-dasharray: 60 31.41 60 1000;
+    transition: 1s;
+}
+
+.button-three:hover .line {
+    translate: -2.4% -2.4%;
+    rotate: 45deg;
+    transform-origin: center;
+    stroke-dasharray: 60 103 60 1000;
+    stroke-dashoffset: -91.4;
+}
+
+.button-three line {
+    stroke:red;
+}
+
