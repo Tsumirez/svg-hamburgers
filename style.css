@@ -84,10 +84,40 @@ button {
 }
 
 .button-two .line {
-    transition: stroke-dashoffset 1s;
-
+    transform-origin: center;
 }
 
 .button-two:hover .line {
-    stroke-dashoffset: 69.9;
+    animation: rotate-to-x-formation 1s 0s 1 forwards,
+               align-y 1s 0s 1 forwards;
+}
+
+.button-two .line.top {
+    --rotation: 45deg;
+    --moveY: 10%
+
+} 
+
+.button-two .line.bot {
+    --rotation: -45deg;
+    --moveY: -10%
+}
+
+@keyframes rotate-to-x-formation {
+    0% { stroke-dashoffset: 0; }
+    40% { stroke-dashoffset: 69.9; }
+    60% { stroke-dashoffset: 69.9; transform:translateY(var(--moveY)) }
+    100% { stroke-dashoffset: 0; transform:translateY(var(--moveY)) }
+}
+
+@keyframes to-open-icon {
+    0% { stroke-dashoffset: 69.9; }
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes align-y {
+    0% { rotate: 0deg}
+    /* 40% { rotate:0deg } */
+    60% { rotate: var(--rotation)}
+    100% { rotate: var(--rotation) }
 }
