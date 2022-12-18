@@ -79,7 +79,7 @@ button {
 
 /* ------ STYLING AND ANIMATIONS FOR SECOND ICON  ------------- */
 
-.button-two {
+.button-two  {
     --icon-color: maroon;
 }
 
@@ -88,8 +88,8 @@ button {
 }
 
 .button-two:hover .line {
-    animation: rotate-to-x-formation 1s 0s 1 forwards,
-               align-y 1s 0s 1 forwards;
+    animation: form-X-shape-animation-one 1s 0s 1 forwards,
+               form-X-shape-animation-two 1s 0s 1 forwards;
 }
 
 .button-two .line.top {
@@ -103,7 +103,7 @@ button {
     --moveY: -10%
 }
 
-@keyframes rotate-to-x-formation {
+@keyframes form-X-shape-animation-one {
     0% { stroke-dashoffset: 0; }
     40% { stroke-dashoffset: 69.9; }
     60% { stroke-dashoffset: 69.9; transform:translateY(var(--moveY)) }
@@ -115,7 +115,7 @@ button {
     100% { stroke-dashoffset: 0; }
 }
 
-@keyframes align-y {
+@keyframes form-X-shape-animation-two {
     0% { rotate: 0deg}
     /* 40% { rotate:0deg } */
     60% { rotate: var(--rotation)}
