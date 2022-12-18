@@ -134,3 +134,7 @@ button {
 }
 
 /*  ---------------------- SECOND ICON END ------------------------------- */
+
+.button-three {
+    --icon-color: indigo;
+}
