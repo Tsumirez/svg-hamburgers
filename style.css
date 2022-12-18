@@ -85,6 +85,8 @@ button {
 
 .button-two .line {
     transform-origin: center;
+    animation: to-open-icon-one 1s 0s 1 forwards,
+               to-open-icon-two 1s 0s 1 forwards;
 }
 
 .button-two:hover .line {
@@ -103,6 +105,7 @@ button {
     --moveY: -10%
 }
 
+/* animations for forming x shape on hover */
 @keyframes form-X-shape-animation-one {
     0% { stroke-dashoffset: 0; }
     40% { stroke-dashoffset: 69.9; }
@@ -110,14 +113,24 @@ button {
     100% { stroke-dashoffset: 0; transform:translateY(var(--moveY)) }
 }
 
-@keyframes to-open-icon {
-    0% { stroke-dashoffset: 69.9; }
-    100% { stroke-dashoffset: 0; }
-}
-
 @keyframes form-X-shape-animation-two {
     0% { rotate: 0deg}
-    /* 40% { rotate:0deg } */
     60% { rotate: var(--rotation)}
     100% { rotate: var(--rotation) }
 }
+
+/* animations for reverting to default state on hover end */
+@keyframes to-open-icon-one {
+    0% { rotate: var(--rotation) }
+    40% { rotate: var(--rotation)}
+    100% { rotate: 0deg}
+}
+
+@keyframes to-open-icon-two {
+    0% { stroke-dashoffset: 0; transform:translateY(var(--moveY)) }
+    40% { stroke-dashoffset: 69.9; transform:translateY(var(--moveY)) }
+    60% { stroke-dashoffset: 69.9; }
+    100% { stroke-dashoffset: 0; }
+}
+
+/*  ---------------------- SECOND ICON END ------------------------------- */
