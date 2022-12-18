@@ -15,6 +15,7 @@ button {
     background: transparent;
     border:10px solid var(--icon-color, #000);
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 /* ------ STYLING AND ANIMATIONS FOR FIRST ICON  ------------- */
@@ -29,36 +30,32 @@ button {
 }
 
 
-.button-one:hover .line {
+.button-one[data-state="opened"] .line {
     transition: y 300ms ease-in, rotate .3s ease-in .3s, opacity 0ms .3s;
 }
 
-.button-one:hover .top {
+.button-one[data-state="opened"] .top {
     rotate: 45deg;
     y: 45;
 }
 
-.button-one:hover .mid {
+.button-one[data-state="opened"] .mid {
     opacity: 0;
 }
 
-.button-one:hover .bot {
+.button-one[data-state="opened"] .bot {
     rotate: -45deg;
     y: 45;
 }
 
-.button-one[aria-expanded="true"] .top {
-
-}
-
 /* firefox fix (it does not animate x or y svg properties */
 @-moz-document url-prefix() {
-    .button-one:hover .top {
+    .button-one[data-state="opened"] .top {
         rotate: 45deg;
         transform: translateY(20%);
     }    
 
-    .button-one:hover .bot {
+    .button-one[data-state="opened"] .bot {
         rotate: -45deg;
         transform: translateY(-20%);
     }   
@@ -68,7 +65,7 @@ button {
         transition: transform .3s ease-out .3s, opacity 0ms .3s, rotate .3s ease-out;
     }
 
-    .button-one:hover .line {
+    .button-one[data-state="opened"] .line {
         transition: transform 300ms ease-in, rotate .3s ease-in .3s, opacity 0ms .3s;
     }
 }
@@ -85,11 +82,15 @@ button {
 
 .button-two .line {
     transform-origin: center;
+}
+
+.button-two[data-state="closed"] .line {
+    transform-origin: center;
     animation: to-open-icon-one 1s 0s 1 forwards,
                to-open-icon-two 1s 0s 1 forwards;
 }
 
-.button-two:hover .line {
+.button-two[data-state="opened"] .line {
     animation: form-X-shape-animation-one 1s 0s 1 forwards,
                form-X-shape-animation-two 1s 0s 1 forwards;
 }
@@ -149,7 +150,7 @@ button {
     transition: translate 1s, rotate 1s;
 }
 
-.button-three:hover .hamburger {
+.button-three[aria-expanded="true"] .hamburger {
     translate: 6% -5.65%;
     rotate: 45deg;
 }
@@ -159,7 +160,7 @@ button {
     stroke-dasharray: 60 31.41 60 1000;
 }
 
-.button-three:hover .line {
+.button-three[aria-expanded="true"] .line {
     stroke-dasharray: 60 103 60 1000;
     stroke-dashoffset: -91.4;
 }
