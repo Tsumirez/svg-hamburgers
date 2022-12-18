@@ -135,26 +135,31 @@ button {
 
 /*  ---------------------- SECOND ICON END ------------------------------- */
 
+
+/*  ------------------------ THIRD ICON ------------------------------- */
+
+
 .button-three {
     --icon-color: indigo;
-    --ruler-color: red;
     overflow: hidden;
+    /* background: linear-gradient(to right, transparent calc(50% - 1px),green calc(50% - 1px), green calc(50% + 1px), transparent calc(50% + 1px), transparent 100%); */
+}
+
+.button-three .hamburger {
+    transition: translate 1s, rotate 1s;
+}
+
+.button-three:hover .hamburger {
+    translate: 6% -5.65%;
+    rotate: 45deg;
 }
 
 .button-three .line {
-    stroke-dasharray: 60 31.41 60 1000;
     transition: 1s;
+    stroke-dasharray: 60 31.41 60 1000;
 }
 
 .button-three:hover .line {
-    translate: -2.4% -2.4%;
-    rotate: 45deg;
-    transform-origin: center;
     stroke-dasharray: 60 103 60 1000;
     stroke-dashoffset: -91.4;
 }
-
-.button-three line {
-    stroke:red;
-}
-
